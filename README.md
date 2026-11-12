@@ -5,7 +5,7 @@
 ### module:  COMP08101
 
 
-# Security event logger
+# *Security event logger*
 
 # Program Description
 
