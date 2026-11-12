@@ -7,23 +7,27 @@ Name: Matthew Newnham
 
 def interface():
 
-    security_incident = { #Creating dictionary with key-value pairs for username, IP address, event type and risk level
+    security_incident = {  # Creating dictionary with key-value pairs for username, IP address, event type and risk level
         "username": "user123",
         "ip_address": "192.168.1.1",
         "event_type": "unauthorized access",
-        "risk_level": "high"
+        "risk_level": "high",
     }
     print("==== Security Incident Manager ====\n")
-    print("IP Address:", security_incident["ip_address"]) # printing the IP address from the dictionary using the key "ip_address"
+    print(
+        "IP Address:", security_incident["ip_address"]
+    )  # printing the IP address from the dictionary using the key "ip_address"
 
-    #Call other functions with the dictionary as an argument to update and display the security incident information
-    status(security_incident) 
+    # Call other functions with the dictionary as an argument to update and display the security incident information
+    status(security_incident)
     risk_level(security_incident)
     remove_field(security_incident)
     display_remaining(security_incident)
 
 
-def status(security_incident): # Function to add a new field called status to the security incident dictionary
+def status(
+    security_incident,
+):  # Function to add a new field called status to the security incident dictionary
     print("==== Security Incident Status Update ====\n")
     print("Select a status for the security incident:\n")
     print("1. Open")
@@ -31,15 +35,19 @@ def status(security_incident): # Function to add a new field called status to th
     print("3. Resolved")
     print("4. Closed\n")
 
-
-    while True: ## Loop to prompt the user to select a status for the security incident until a valid option is selected
+    while (
+        True
+    ):  ## Loop to prompt the user to select a status for the security incident until a valid option is selected
         try:
             status_optipn = int(input("Select an option for the status, 1 - 4 "))
 
-            if status_optipn < 1 or status_optipn > 4: # Checking if the user input is valid (between 1 and 4)
-                print("Invalid option selected. Please select a valid option between 1 and 4.")
+            if (
+                status_optipn < 1 or status_optipn > 4
+            ):  # Checking if the user input is valid (between 1 and 4)
+                print(
+                    "Invalid option selected. Please select a valid option between 1 and 4."
+                )
                 continue
-
 
             if status_optipn == 1:
                 state = "Open"
@@ -49,16 +57,22 @@ def status(security_incident): # Function to add a new field called status to th
                 state = "Resolved"
             elif status_optipn == 4:
                 state = "Closed"
-            
-            security_incident["status"] = state ## Adding the new field "status" to the security incident dictionary with the selected value
-            return security_incident ### Returning the updated security incident dictionary to the calling function
-        
+
+            security_incident["status"] = (
+                state  ## Adding the new field "status" to the security incident dictionary with the selected value
+            )
+            return security_incident  ### Returning the updated security incident dictionary to the calling function
+
         except ValueError:
             print("\nInvalid input. Please enter a number between 1 and 4.")
-        
-#update the risk level of the security incident dictionary
 
-def risk_level(security_incident):# Function to update the risk level of the security incident dictionary
+
+# update the risk level of the security incident dictionary
+
+
+def risk_level(
+    security_incident,
+):  # Function to update the risk level of the security incident dictionary
     print("==== Security Incident Risk Level Update ====\n")
     print("Select a status for the risk level:")
     print("1. Low")
@@ -70,8 +84,12 @@ def risk_level(security_incident):# Function to update the risk level of the sec
         try:
             risk_optipn = int(input("Select a risk assesment level, 1 - 4 "))
 
-            if risk_optipn < 1 or risk_optipn > 4:## Checking if the user input is valid (between 1 and 4)
-                print("Invalid option selected. Please select a valid option between 1 and 4.")
+            if (
+                risk_optipn < 1 or risk_optipn > 4
+            ):  ## Checking if the user input is valid (between 1 and 4)
+                print(
+                    "Invalid option selected. Please select a valid option between 1 and 4."
+                )
                 continue
 
             if risk_optipn == 1:
@@ -83,15 +101,19 @@ def risk_level(security_incident):# Function to update the risk level of the sec
             elif risk_optipn == 4:
                 risk = "critical"
 
-            security_incident["risk_level"] = risk ## Updating the "risk_level" field in the security incident dictionary with the selected value
-            return security_incident ### Returning the updated security incident dictionary to the calling function
+            security_incident["risk_level"] = (
+                risk  ## Updating the "risk_level" field in the security incident dictionary with the selected value
+            )
+            return security_incident  ### Returning the updated security incident dictionary to the calling function
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 4.")
-            
-
 
     # Remove one field from the dictionary
-def remove_field(security_incident): # Function to remove a field from the security incident dictionary
+
+
+def remove_field(
+    security_incident,
+):  # Function to remove a field from the security incident dictionary
     print("==== Security Incident Field Removal ====\n")
     print("Select a field to remove from the security incident:")
     print("1. Username")
@@ -103,10 +125,16 @@ def remove_field(security_incident): # Function to remove a field from the secur
 
     while True:
         try:
-            field_option = int(input("Select an option for the field to remove, 1 - 6 "))
+            field_option = int(
+                input("Select an option for the field to remove, 1 - 6 ")
+            )
 
-            if field_option < 1 or field_option > 6: ## Checking if the user input is valid (between 1 and 6)
-                print("Invalid option selected. Please select a valid option between 1 and 6.")
+            if (
+                field_option < 1 or field_option > 6
+            ):  ## Checking if the user input is valid (between 1 and 6)
+                print(
+                    "Invalid option selected. Please select a valid option between 1 and 6."
+                )
                 continue
 
                 """
@@ -139,32 +167,40 @@ def remove_field(security_incident): # Function to remove a field from the secur
                     print("Risk Level has already been removed.")
 
             elif field_option == 5:
-                    if "status" in security_incident:
-                        del security_incident["status"]
-                    else:
-                        print("Status has already been removed.")
+                if "status" in security_incident:
+                    del security_incident["status"]
+                else:
+                    print("Status has already been removed.")
 
-            elif field_option == 6: ## If the user selects option 6, no fields will be removed and the function will exit.
+            elif (
+                field_option == 6
+            ):  ## If the user selects option 6, no fields will be removed and the function will exit.
                 print("Exiting field removal process.")
                 break
 
-            return security_incident #### Returning the updated security incident dictionary to the calling function
+            return security_incident  #### Returning the updated security incident dictionary to the calling function
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 6.")
 
 
-
-#display all
-def display_remaining(security_incident):# Function to display all remaining keys and values in the security incident dictionary
+# display all
+def display_remaining(
+    security_incident,
+):  # Function to display all remaining keys and values in the security incident dictionary
     print("\n==== Remaining Security Incident Details ====\n")
-    for key, value in security_incident.items(): ## Looping through the security incident dictionary and printing each key-value pair
-        print(key, ":", value) ### Printing the key and value of each key-value pair in the security incident dictionary
+    for (
+        key,
+        value,
+    ) in (
+        security_incident.items()
+    ):  ## Looping through the security incident dictionary and printing each key-value pair
+        print(
+            key, ":", value
+        )  ### Printing the key and value of each key-value pair in the security incident dictionary
 
     ###printing the total number of key-value pairs in the security incident dictionary using the len() function
     print("Total number of key-value pairs:", len(security_incident))
 
 
-
 if __name__ == "__main__":
     interface()
-
