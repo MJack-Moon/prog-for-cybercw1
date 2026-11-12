@@ -12,7 +12,9 @@ This program requires both files within the repo.
 
 The main program handles user interaction, while the imported module contains the functions responsible for IP address validation, password validation and secure random password generation.
 
-## Design of the program
+# Design of the program
+
+## security_tools.py
 
 1. ### IP address validator
 
@@ -29,6 +31,10 @@ The main program handles user interaction, while the imported module contains th
   
 3. ### Random password generater
    - If ip address validator returns False this function runs
-   - 
+   - Asks the user if they want a passowrd generated
+   - If user answers yes the program will provide the user with a generated password within standard password requirements
+
+## main.py
+
   
      
