@@ -43,6 +43,9 @@ def validate_ip(ip):  ## seperated for True/False validation, hardcoding givin n
         if not part.isdigit():  ## checks if the part is a digit
             return False
 
+        if len(part) > 1 and part.startswith("0"):
+            return False
+
         number = int(part)  ## converts the part to an integer
 
         if number < 0 or number > 255:  ## checks that the number is between 0 and 255
@@ -53,7 +56,7 @@ def validate_ip(ip):  ## seperated for True/False validation, hardcoding givin n
 
 def replay():
     while True:
-        play_again = input("Would you like to play again? (y/n): ").lower()
+        play_again = input("Would you like to play again? (y/n): ").lower().strip()
         if play_again == "y" or play_again == "yes":
             print("Starting a new password validation...\n")
             ip_address_validator()
