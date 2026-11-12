@@ -8,4 +8,5 @@
 
 ## Program description
 
-This program acts as an indecent management menu, allowing the user to modify preset incidents within the program   
+This program acts as an indecent management menu, allowing the user to modify preset incident within the program.
+The user is able to change and remove all parts of the incident 
