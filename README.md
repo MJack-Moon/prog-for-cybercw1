@@ -19,7 +19,7 @@ This Python program provides a menu-driven security tool containing three differ
 
 The program demonstrates password checking, authentication, loops, conditional statements, functions and basic security event analysis.
 
-## Features
+## Code contains
 
 ### 1. Security Event Counter
 - Requests ten password entries from the user.
