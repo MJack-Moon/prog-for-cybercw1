@@ -4,53 +4,46 @@ Name: Matthew Newnham
 
 """
 
+# Reusable cyber security utilities
+
+import secrets  # used for generating secure random numbers
+import string  # used for string manipulation and character sets
 
 
-#Reusable cyber security utilities
+def ip_address_validator(ask_ip):  ## IP address validation function
 
-import secrets # used for generating secure random numbers
-import string # used for string manipulation and character sets
+    ip = ask_ip.strip()  ## removes leading and trailing whitespace
 
-
-
-    
-
-
-
-def ip_address_validator(ask_ip): ## IP address validation function
-
-    ip = ask_ip.strip() ## removes leading and trailing whitespace
-
-    if "." not in ip: ## checks if the IP address contains dots
+    if "." not in ip:  ## checks if the IP address contains dots
         return False
 
-    if ip.count(".") != 3: ## checks if there are exactly three dots
+    if ip.count(".") != 3:  ## checks if there are exactly three dots
         return False
 
-    parts = ip.split(".") ## splits the IP address into four parts
+    parts = ip.split(".")  ## splits the IP address into four parts
 
-    if len(parts) != 4: ## checks that there are four parts
+    if len(parts) != 4:  ## checks that there are four parts
         return False
 
-    for part in parts: ## checks each part of the IP address
+    for part in parts:  ## checks each part of the IP address
 
-        if not part.isdigit(): ## checks if the part contains only digits
+        if not part.isdigit():  ## checks if the part contains only digits
             return False
 
-        if len(part) > 1 and part.startswith("0"): ## checks for leading zeros
+        if len(part) > 1 and part.startswith("0"):  ## checks for leading zeros
             return False
 
-        number = int(part) ## converts the part to an integer
+        number = int(part)  ## converts the part to an integer
 
-        if number < 0 or number > 255: ## checks that the number is between 0 and 255
+        if number < 0 or number > 255:  ## checks that the number is between 0 and 255
             return False
 
     return True
 
 
-def gen_password(): # generating the password
+def gen_password():  # generating the password
 
-    #allowed symbles and characters for password generation
+    # allowed symbles and characters for password generation
     allowed_s = "!@#$%"  ## setting the allowed symbols for password validation
     upper = string.ascii_uppercase  ## uppercase letters
     lower = string.ascii_lowercase  ## lowercase letters
@@ -58,7 +51,7 @@ def gen_password(): # generating the password
 
     pass_length = secrets.randbelow(7) + 10  ## random length between 10 and 16
 
-    #making list for the password to ensure at least one of each required character type is included
+    # making list for the password to ensure at least one of each required character type is included
     password = []
 
     # ensuring at least one of each required character type is included
@@ -68,24 +61,25 @@ def gen_password(): # generating the password
     password.append(secrets.choice(digits))
     password.append(secrets.choice(allowed_s))  ## ensuring at least one symbol
 
-    allowed_chars = upper + lower + digits + allowed_s  ## all allowed characters for password generation
+    allowed_chars = (
+        upper + lower + digits + allowed_s
+    )  ## all allowed characters for password generation
 
-    while len(password) < pass_length:  ## filling the rest of the password with random allowed characters
+    while (
+        len(password) < pass_length
+    ):  ## filling the rest of the password with random allowed characters
         password.append(secrets.choice(allowed_chars))
 
     secrets.SystemRandom().shuffle(password)  ## shuffling the password so it's random
 
-    return ''.join(password)
+    return "".join(password)
 
-    
+
 def Password_valid(ask_password):
 
     password = ask_password  ## calling the password generation function
 
     allowed_symbols = "!@#$%"  ## setting the allowed symbols for password validation
-
-
-
 
     length = len(password)  ## calculating the length of the password
 
@@ -130,7 +124,9 @@ def Password_valid(ask_password):
 
         return False
 
-    if any(char not in allowed_symbols and not char.isalnum() for char in password):  ## valadation for the allowed symbles provided
+    if any(
+        char not in allowed_symbols and not char.isalnum() for char in password
+    ):  ## valadation for the allowed symbles provided
         print("Password must contain the following symbols: !, @, #, $, %.")
         return False
 
@@ -138,7 +134,4 @@ def Password_valid(ask_password):
         print("Password must not contain any spaces.")
         return False
 
-
-
-    
     return True
