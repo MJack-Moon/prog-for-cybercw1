@@ -11,4 +11,14 @@
 # Branch descriptions:
 
 - security-tool
+  
+  This program is has been created as a cyber security
+
+- security-event-logger
+
+- ip-address-validator
+
+- security-incident-manager
+
+- cyber-security-utilities
 
