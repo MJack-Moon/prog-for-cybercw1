@@ -32,12 +32,13 @@ def display_menu():
         else:
             print("Password is invalid.")
 
-            ask_password = input(
+            ask = input(
                 "Would you like a random passowrd? yes or no: "
             )  ## Prompt the user to ask if they want a random password
-            if (
-                ask_password.lower() == "yes" or ask_password.lower() == "y"
-            ):  ## Check if the user input is "yes" or "y"
+            if ask.lower().strip() in [
+                "yes",
+                "y",
+            ]:  ## Check if the user input is "yes" or "y"
                 random_password = (
                     security_tools.gen_password()
                 )  ## Generate a random password using the gen_password function from security_tools
