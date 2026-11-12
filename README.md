@@ -53,15 +53,15 @@ The csv file if not already existing is created on first use. This file is is ge
 ### The program records the following fields:
 
 - event id
-- 
+  
 - username
-- 
+  
 - event type
-- 
+  
 - event status
-- 
+  
 - ip address
-- 
+
 - time and date of event
 
   ## Running the program
