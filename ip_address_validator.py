@@ -9,7 +9,7 @@ def ip_address_validator():  ## main function to validate the password
 
     while True:
 
-        ip_address = input("Enter an IP address: ")
+        ip_address = input("Enter an IP address: ").strip()
         if validate_ip(
             ip_address
         ):  ##sends the input to the validate_ip function and checks if it returns True or False
@@ -40,7 +40,7 @@ def validate_ip(ip):  ## seperated for True/False validation, hardcoding givin n
         parts
     ):  ## checks that the part contains only digits using for loop to iterate through each part of the IP address
 
-        if not part.isdigit():  ## checks if the part is a digit
+        if not part.isdigit() or not part.isdecimal():  ## checks if the part is a digit
             return False
 
         if len(part) > 1 and part.startswith("0"):
