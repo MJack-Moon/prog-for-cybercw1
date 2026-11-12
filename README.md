@@ -57,13 +57,3 @@ The program demonstrates password checking, authentication, loops, conditional s
    ```
 
 4. Select an option from the menu and follow the instructions.
-
-## Python Concepts Demonstrated
-
-- Functions
-- Conditional statements (`if`, `elif`, `else`)
-- `for` loops and `while` loops
-- User input and output
-- Variables and counters
-- Percentage calculations
-- String comparisons
