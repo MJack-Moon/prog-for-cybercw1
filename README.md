@@ -63,5 +63,23 @@ The csv file if not already existing is created on first use. This file is is ge
 - ip address
 - 
 - time and date of event
+
+  ## Running the program
+
+1. Open a terminal in the repository.
+
+2. Switch to the correct branch:
+
+"git switch security-event-logger"
+
+3. Run the program:
+
+"python security_event_logger.py"
+
+4. Enter login credentials.
+
+5. Following successful authentication, select an option to display the security log or log out.
+
+The CSV file is created in the same directory as the Python script.
   
 
