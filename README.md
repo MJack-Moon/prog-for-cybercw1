@@ -70,11 +70,15 @@ The csv file if not already existing is created on first use. This file is is ge
 
 2. Switch to the correct branch:
 
-"git switch security-event-logger"
+```bash
+git switch security-event-logger
+```
 
 3. Run the program:
 
-"python security_event_logger.py"
+```bash
+python security_event_logger.py
+```
 
 4. Enter login credentials.
 
