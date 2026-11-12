@@ -36,5 +36,9 @@ The main program handles user interaction, while the imported module contains th
 
 ## main.py
 
+- gets IP address and password from user
+- Calls and passes user input into both functions
+- Takes the output from the functions and displays if inputs were valid
+- If password was not valid, asks the user if they  
   
      
