@@ -27,7 +27,7 @@ def ip_address_validator(ask_ip):  ## IP address validation function
 
     for part in parts:  ## checks each part of the IP address
 
-        if not part.isdigit():  ## checks if the part contains only digits
+        if not part.isdigit() or not part.isdecimal():  ## checks if the part contains only digits
             return False
 
         if len(part) > 1 and part.startswith("0"):  ## checks for leading zeros
@@ -124,14 +124,16 @@ def Password_valid(ask_password):
 
         return False
 
+    if space_count > 0:
+        print("Password must not contain any spaces.")
+        return False
+
     if any(
         char not in allowed_symbols and not char.isalnum() for char in password
     ):  ## valadation for the allowed symbles provided
         print("Password must contain the following symbols: !, @, #, $, %.")
         return False
 
-    if space_count > 0:
-        print("Password must not contain any spaces.")
-        return False
+
 
     return True
