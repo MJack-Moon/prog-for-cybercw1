@@ -17,7 +17,9 @@ def interface():
     print(
         "IP Address:", security_incident["ip_address"]
     )  # printing the IP address from the dictionary using the key "ip_address"
-
+    print(
+        "username:", security_incident["username"]
+    )  # printing the username from the dictionary using the key "username"
     # Call other functions with the dictionary as an argument to update and display the security incident information
     status(security_incident)
     risk_level(security_incident)
