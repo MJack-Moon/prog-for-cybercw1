@@ -11,7 +11,9 @@ for each pass or fail, create/update a security log csv file
 import csv  # importing the csv module to handle reading and writing CSV files
 import os  # importing the os module to handle file and directory operations
 import socket  # importing the socket module to retrieve the host name and IP address
-from datetime import (datetime)  # import datetime #importing the datetime module to get the current date and time
+from datetime import (
+    datetime,
+)  # import datetime #importing the datetime module to get the current date and time
 import sys  # importing the sys module to handle system-specific parameters and functions
 
 fname = os.path.join(
