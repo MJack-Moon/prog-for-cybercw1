@@ -51,7 +51,7 @@ git branch -a
 
 Switch to the branch containing the task you want to run:
 
-"git switch (branch name)"
+"git switch <"branch name">
 e.g
 ```bash
 git switch security-tool
