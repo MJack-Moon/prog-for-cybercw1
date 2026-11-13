@@ -219,7 +219,7 @@ def replay():  ## Replay function import file pending
 
     else:
         print("Invalid input. Please select an option")
-        replay()  # Continue the loop to prompt the user again for a valid input
+        # Continue the loop to prompt the user again for a valid input
 
 if __name__ == "__main__":
     interface()  
