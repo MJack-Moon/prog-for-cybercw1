@@ -34,14 +34,15 @@ All branches also contain screenshots of testing
 
 Clone the repository:
 
+```bash
 git clone https://github.com/MJack-Moon/prog-for-cybercw1.git
-
+```
 Navigate into the repository:
 
 ```bash
 cd prog-for-cybercw1
-
 ```
+
 View the available branches:
 
 ```bash
