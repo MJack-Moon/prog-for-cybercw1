@@ -6,6 +6,7 @@
 
 ## This is a repository containing the requires course work needed within the branches that have been created following the requirements.
 Each task within the branches has been created and updated from previously made programs. 
+All branches also contain screenshots of testing
 # Branch descriptions:
 
 - security-tool
@@ -37,16 +38,23 @@ git clone https://github.com/MJack-Moon/prog-for-cybercw1.git
 
 Navigate into the repository:
 
+```bash
 cd prog-for-cybercw1
 
+```
 View the available branches:
 
+```bash
 git branch -a
+```
 
 Switch to the branch containing the task you want to run:
 
+"git switch (branch name)"
+e.g
+```bash
 git switch security-tool
-
+```
 Follow the instructions in that branch's readme to run the Python program.
 
 
