@@ -5,28 +5,33 @@ Name: Matthew Newnham
 """
 
 
+import sys
+
+
 def interface():
 
-    security_incident = {  # Creating dictionary with key-value pairs for username, IP address, event type and risk level
-        "username": "user123",
-        "ip_address": "192.168.1.1",
-        "event_type": "unauthorized access",
-        "risk_level": "high",
-    }
-    print("==== Security Incident Manager ====\n")
-    print(
-        "IP Address:", security_incident["ip_address"]
-    )  # printing the IP address from the dictionary using the key "ip_address"
-    print(
-        "username:", security_incident["username"]
-    )  # printing the username from the dictionary using the key "username"
-    # Call other functions with the dictionary as an argument to update and display the security incident information
-    status(security_incident)
-    risk_level(security_incident)
-    remove_field(security_incident)
-    display_remaining(security_incident)
+    while True:  # Loop to prompt the user to select an option until a valid option is selected
 
-
+            security_incident = {  # Creating dictionary with key-value pairs for username, IP address, event type and risk level
+                "username": "user123",
+                "ip_address": "192.168.1.1",
+                "event_type": "unauthorized access",
+                "risk_level": "high",
+            }
+            print("==== Security Incident Manager ====\n")
+            print(
+                "IP Address:", security_incident["ip_address"]
+            )  # printing the IP address from the dictionary using the key "ip_address"
+            print(
+                "username:", security_incident["username"]
+            )  # printing the username from the dictionary using the key "username"
+            # Call other functions with the dictionary as an argument to update and display the security incident information
+            status(security_incident)
+            risk_level(security_incident)
+            remove_field(security_incident)
+            display_remaining(security_incident)
+            break  # Exit the loop after one iteration to prevent infinite loop
+    replay()  # Call the replay function to ask the user if they want to play again
 def status(
     security_incident,
 ):  # Function to add a new field called status to the security incident dictionary
@@ -178,7 +183,6 @@ def remove_field(
                 field_option == 6
             ):  ## If the user selects option 6, no fields will be removed and the function will exit.
                 print("Exiting field removal process.")
-                break
 
             return security_incident  #### Returning the updated security incident dictionary to the calling function
         except ValueError:
@@ -203,6 +207,19 @@ def display_remaining(
     ###printing the total number of key-value pairs in the security incident dictionary using the len() function
     print("Total number of key-value pairs:", len(security_incident))
 
+def replay():  ## Replay function import file pending
+    play_again = input("\nWould you like to play again? (y/n): ").lower()
+    if play_again in ("y", "yes"):
+        print("\nStarting a new password validation.\n")
+        interface()
+
+    elif play_again in ("n", "no"):
+        print("\nThanks for playing!")
+        sys.exit()  ## forces exit from the program
+
+    else:
+        print("Invalid input. Please select an option")
+        replay()  # Continue the loop to prompt the user again for a valid input
 
 if __name__ == "__main__":
-    interface()
+    interface()  
